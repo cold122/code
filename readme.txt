@@ -1,2 +1,2 @@
-git is a very stupit software
+git is a very clever software
 gagaga
