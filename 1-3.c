@@ -20,7 +20,7 @@ void check(int cen)//电梯当前层数
     }
     if(num[cen]&&ct<4) //该层有人呼叫 且 电梯人数小于4 就接上电梯
     {
-        mu=go[cen],m[mu]=1;
+        m[go[cen]]=1;
         num[cen]=0,ct++;temp=1;
     }
     if(temp) printf("%d %d %d\n",cen,tim,ct);
@@ -87,7 +87,7 @@ int main()
                 check(i);
         }
         st=mu;
-        for(int i=1;i<=10;i++) if(m[i])//继续当前电梯剩余人的需求
+        for(int i=10;i>=1;i--) if(m[i])//继续当前电梯剩余人的需求(电梯通常先上后下)
         {
             mu=i;
             break;
